@@ -1,0 +1,31 @@
+# Maven
+target/
+*.class
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Database
+data/*.db
+data/*.trace.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# CodeBuddy
+.codebuddy/
+
+# Temporary
+*.tmp
+*.bak

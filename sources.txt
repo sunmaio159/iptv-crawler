@@ -1,0 +1,97 @@
+# ===========================================
+# IPTV M3U 直播源列表
+# 格式: name|url|large(large=true 表示大文件，使用更长超时)
+# 以 # 开头的行为注释
+# ===========================================
+
+# ========== iptv-org 中国相关 ==========
+iptv-org-cn|https://iptv-org.github.io/iptv/countries/cn.m3u|true
+iptv-org-hk|https://iptv-org.github.io/iptv/countries/hk.m3u
+iptv-org-tw|https://iptv-org.github.io/iptv/countries/tw.m3u
+iptv-org-mo|https://iptv-org.github.io/iptv/countries/mo.m3u
+
+# ========== iptv-org 亚洲 ==========
+iptv-org-jp|https://iptv-org.github.io/iptv/countries/jp.m3u
+iptv-org-kr|https://iptv-org.github.io/iptv/countries/kr.m3u
+iptv-org-in|https://iptv-org.github.io/iptv/countries/in.m3u
+iptv-org-sg|https://iptv-org.github.io/iptv/countries/sg.m3u
+iptv-org-th|https://iptv-org.github.io/iptv/countries/th.m3u
+iptv-org-my|https://iptv-org.github.io/iptv/countries/my.m3u
+iptv-org-id|https://iptv-org.github.io/iptv/countries/id.m3u
+iptv-org-ph|https://iptv-org.github.io/iptv/countries/ph.m3u
+iptv-org-vn|https://iptv-org.github.io/iptv/countries/vn.m3u
+
+# ========== iptv-org 欧美 ==========
+iptv-org-us|https://iptv-org.github.io/iptv/countries/us.m3u
+iptv-org-gb|https://iptv-org.github.io/iptv/countries/gb.m3u
+iptv-org-de|https://iptv-org.github.io/iptv/countries/de.m3u
+iptv-org-fr|https://iptv-org.github.io/iptv/countries/fr.m3u
+iptv-org-it|https://iptv-org.github.io/iptv/countries/it.m3u
+iptv-org-es|https://iptv-org.github.io/iptv/countries/es.m3u
+iptv-org-ca|https://iptv-org.github.io/iptv/countries/ca.m3u
+iptv-org-br|https://iptv-org.github.io/iptv/countries/br.m3u
+iptv-org-mx|https://iptv-org.github.io/iptv/countries/mx.m3u
+iptv-org-ru|https://iptv-org.github.io/iptv/countries/ru.m3u
+iptv-org-au|https://iptv-org.github.io/iptv/countries/au.m3u
+
+# ========== iptv-org 其他地区 ==========
+iptv-org-tr|https://iptv-org.github.io/iptv/countries/tr.m3u
+iptv-org-pl|https://iptv-org.github.io/iptv/countries/pl.m3u
+iptv-org-nl|https://iptv-org.github.io/iptv/countries/nl.m3u
+iptv-org-se|https://iptv-org.github.io/iptv/countries/se.m3u
+iptv-org-be|https://iptv-org.github.io/iptv/countries/be.m3u
+iptv-org-pt|https://iptv-org.github.io/iptv/countries/pt.m3u
+iptv-org-ar|https://iptv-org.github.io/iptv/countries/ar.m3u
+iptv-org-cl|https://iptv-org.github.io/iptv/countries/cl.m3u
+iptv-org-co|https://iptv-org.github.io/iptv/countries/co.m3u
+
+# ========== iptv-org 语言 ==========
+iptv-org-zho|https://iptv-org.github.io/iptv/languages/zho.m3u|true
+iptv-org-eng|https://iptv-org.github.io/iptv/languages/eng.m3u
+iptv-org-spa|https://iptv-org.github.io/iptv/languages/spa.m3u
+iptv-org-fra|https://iptv-org.github.io/iptv/languages/fra.m3u
+iptv-org-jpn|https://iptv-org.github.io/iptv/languages/jpn.m3u
+iptv-org-kor|https://iptv-org.github.io/iptv/languages/kor.m3u
+iptv-org-ara|https://iptv-org.github.io/iptv/languages/ara.m3u
+iptv-org-rus|https://iptv-org.github.io/iptv/languages/rus.m3u
+iptv-org-ger|https://iptv-org.github.io/iptv/languages/ger.m3u
+iptv-org-ita|https://iptv-org.github.io/iptv/languages/ita.m3u
+iptv-org-por|https://iptv-org.github.io/iptv/languages/por.m3u
+
+# ========== iptv-org 分类 ==========
+iptv-org-news|https://iptv-org.github.io/iptv/categories/news.m3u
+iptv-org-sports|https://iptv-org.github.io/iptv/categories/sports.m3u
+iptv-org-movies|https://iptv-org.github.io/iptv/categories/movies.m3u
+iptv-org-documentary|https://iptv-org.github.io/iptv/categories/documentary.m3u
+iptv-org-music|https://iptv-org.github.io/iptv/categories/music.m3u
+iptv-org-kids|https://iptv-org.github.io/iptv/categories/kids.m3u
+iptv-org-entertainment|https://iptv-org.github.io/iptv/categories/entertainment.m3u
+iptv-org-education|https://iptv-org.github.io/iptv/categories/education.m3u
+iptv-org-regional|https://iptv-org.github.io/iptv/categories/regional.m3u
+
+# ========== fanmingming 中文源系列 ==========
+fanmingming-main|https://raw.githubusercontent.com/fanmingming/live/main/tv.m3u
+fanmingming-ipv6|https://raw.githubusercontent.com/fanmingming/live/main/tv/ipv6.m3u
+fanmingming-itv|https://raw.githubusercontent.com/fanmingming/live/main/tv/itv.m3u
+fanmingming-cctv|https://raw.githubusercontent.com/fanmingming/live/main/tv/cctv.m3u
+fanmingming-iptv|https://raw.githubusercontent.com/fanmingming/live/main/tv/iptv.m3u
+fanmingming-gitv|https://raw.githubusercontent.com/fanmingming/live/main/tv/gitv.m3u
+
+# ========== 其他中文优质源 ==========
+aptv|https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u
+yuechan|https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u
+iptv-org-index|https://raw.githubusercontent.com/iptv-org/iptv/index.m3u|true
+cctv-free|https://raw.githubusercontent.com/SAKURASE7EN/cctv-free/master/tv.m3u
+tv-free|https://raw.githubusercontent.com/Herater/Free-TV-Url/master/tv.m3u
+hktv|https://raw.githubusercontent.com/HauDanh/HAU-porn/master/iptv/hk.m3u
+living-shenzhen|https://raw.githubusercontent.com/LivingInChina/ChineseIPTV/master/iptv.m3u
+global-iptv|https://raw.githubusercontent.com/mehwww/China-IPTV-Source/master/tv.m3u
+bestful|https://raw.githubusercontent.com/bestful/Free-Chinese-IPTV-Source/master/tv.m3u
+lauGuoHui|https://raw.githubusercontent.com/lauGuoHui/iptv-source/master/tv.m3u
+
+# ========== 国际综合源 ==========
+iptv-bs|https://iptv.biz/tv.m3u
+iptv-abc|https://iptv-abc.xyz/tv.m3u
+iptv-rocket|https://iptvrocket.com/tv.m3u
+all-iptv|https://all-iptv.xyz/tv.m3u
+fluxus-iptv|https://raw.githubusercontent.com/fluxusdev/streams/main/tv.m3u

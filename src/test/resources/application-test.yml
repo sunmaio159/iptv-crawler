@@ -1,0 +1,73 @@
+# ===========================================
+# IPTV Crawler 测试配置文件
+# ===========================================
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+server:
+  port: 0
+
+# IPTV Crawler 测试配置
+iptv:
+  sources:
+    - name: test-source-1
+      url: https://test.example.com/source1.m3u
+      large: false
+    - name: test-source-2
+      url: https://test.example.com/source2.m3u
+      large: false
+
+  crawler:
+    concurrency: 2
+    max-retries: 2
+    retry-delay-ms: 100
+    min-resolution: 720p
+    resolution-filter-mode: permissive
+    circuit-breaker:
+      failure-threshold: 3
+      half-open-timeout-ms: 1000
+
+  speedtest:
+    quick-probe-seconds: 1
+    max-probe-seconds: 2
+    concurrency: 2
+
+  metrics:
+    retention-hours: 1
+    score-calculation-interval-minutes: 60
+
+  ffmpeg:
+    path: test-ffmpeg
+
+  cleanup:
+    retention-days: 1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+logging:
+  level:
+    com.iptv: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

@@ -1,0 +1,341 @@
+# ===========================================
+# IPTV Crawler 配置文件
+# ===========================================
+
+# 使用H2嵌入式数据库（无需安装MySQL）
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/iptv;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+server:
+  port: 8080
+
+# IPTV Crawler 自定义配置
+iptv:
+  # M3U 直播源列表统一由 sources.txt 管理，不再在本文件中配置
+
+  # 频道过滤屏蔽配置—匹配任意规则的频道会被自动过滤掉
+  blocklist:
+    # 屏蔽的频道名关键词（名称包含即跳过）
+    name-keywords:
+      - "CCTV-Nostalgia"
+      - "CCTV-Culture"
+      - "CCTV-Women"
+      - "CCTV-Billiards"
+      - "CCTV-Golf"
+      - "CCTV-Health"
+      - "CCTV-Storm"
+      - "CCTV-The First"
+      - "CCTV-Weapon"
+      - "CCTV-World Geography"
+      - "CCTV+"
+      - "CNBC"
+      - "CNN"
+      - "BBC"
+      - "FOX"
+      - "Al Jazeera"
+      - "NHK"
+      - "DW "
+      - "France 24"
+      - "RT "
+      - "Sputnik"
+      - "EuroNews"
+      - "Bloomberg"
+      - "ABC "
+      - "NBC "
+      - "CBS "
+      - "PBS "
+      - "WION"
+      - "TRT "
+      - "ARD "
+      - "ZDF"
+      - "RAI"
+      - "TVE"
+      - "RTP"
+      - "TV3"
+      - "TV4"
+      - "TV5"
+      - "Canal"
+      - "Antena"
+      - "SIC "
+      - "TVI"
+      - "TVP"
+      - "RTL"
+      - "PRO TV"
+      - "RTS"
+      - "NPO"
+      - "Omroep"
+      - "VTM"
+      - "MTV "
+      - "MTV "  # 不同语言版本
+      - "Music "
+      - "Disney"
+      - "Nickelodeon"
+      - "Cartoon Network"
+      - "Discovery"
+      - "National Geographic"
+      - "History "
+      - "Animal Planet"
+      - "TLC"
+      - "E! "
+      - "Comedy Central"
+      - "Paramount"
+      - "HBO"
+      - "Star Movies"
+      - "AXN"
+      - "Syfy"
+      - "USA Network"
+      - "TNT"
+      - "TBS"
+      - "AMC"
+      - "Bravo"
+      - "Lifetime"
+      - "TVB"
+      - "翡翠台"
+      - "明珠台"
+      - "本港台"
+      - "华娱卫视"
+      - "星空卫视"
+      - "凤凰卫视"
+      - "澳门卫视"
+      - "香港"
+      - "CGTN"
+      - "CETV"
+      - "BRTV"
+      - "QTV"
+      - "STV"
+      - "SMG"
+      - "Toonmax"
+      - "JiaJia"
+      - "Hunan"
+      - "Anshun"
+      - "Chifeng"
+      - "Guangzhou"
+      - "Harbin"
+      - "Liangshan"
+      - "Nanchang"
+      - "Siping"
+      - "Tonghua"
+      - "Xinjiang"
+      - "Xizang"
+      - "Zhejiang TV"
+      - "Dragon TV"
+      - "Hebei TV"
+      - "TV BRICS"
+      - "VOA"
+      - "Yicai"
+      - "Sihai"
+      - "Ugo"
+      - "Home Plus"
+      - "World Economy"
+      - "Channel Law"
+      - "City Theater"
+      - "Ecology"
+      - "Game Channel"
+      - "Laughter Theater"
+      - "Shandong"
+      - "Shanghai Education"
+      - "Shenzhen Satellite"
+      - "Shaanxi Agroforestry"
+      - "Jiangxi"
+      - "Jilin"
+      - "Nei Monggol"
+      - "Bread TV"
+      - "Angel TV"
+      - "Ando TV"
+      - "ABN China"
+      - "中国气象"
+      - "动作电影"
+      - "北京衛視"
+      - "发现之旅"
+      - "和政电视台"
+      - "家庭影院"
+      - "山东体育"
+      - "山东农科"
+      - "山东少儿"
+      - "山东生活"
+      - "山东综艺"
+      - "山东齐鲁"
+      - "房山电视台"
+      - "敦煌电视台"
+      - "徐州經濟生活"
+      - "康巴卫视"
+      - "四川妇女儿童"
+      - "江苏体育"
+      - "江苏公共"
+      - "江苏城市"
+      - "江苏影视"
+      - "江苏教育"
+      - "江苏综艺"
+      - "滁州"
+      - "白城"
+      - "纪实人文"
+      - "萍鄉"
+      - "西安"
+      - "酒泉"
+      - "长沙"
+      - "金鹰卡通"
+      - "卡酷少儿"
+      - "优漫卡通"
+      - "上海纪实"
+      - "鹤壁"
+      - "风尚购物"
+      - "高台电视台"
+      - "兵团卫视"
+      - "优漫卡通"
+    # 屏蔽的URL关键词（URL包含即跳过）
+    url-keywords:
+      - "cctvplus.com"
+      - "cctvtotallive"
+      - "hwcdn.net"
+      - "udp://"
+      - "dens.tv"
+      - "abnvideos.com"
+      - "bread-tv.com"
+      - "skygo.mn"
+      - "avap.jilintv.cn"
+      - "hrbtv.net"
+      - "hrbtv.net"
+      - "jxtvcn.com.cn"
+      - "nmtv.cn"
+      - "qtv.com.cn"
+      - "sztv.com.cn"
+      - "gztv.com"
+      - "hebitv.com"
+      - "geermurmt.com"
+      - "yunshicloud.com"
+      - "hebtv.com"
+      - "hrbtv.net"
+      - "iqilu.com"
+      - "sctv.com"
+      - "cztv.cc"
+      - "funhillrm.com"
+      - "jdshipin.com"
+      - "pxitv.com"
+      - "xiancity.cn"
+      - "jlntv.cn"
+      - "aodianyun.com"
+      - "ynshicloud.com"
+      - "media.wns.live"
+      - "voa-ingest"
+      - "mediacdn.ru"
+      - "mgtv.com"
+      - "play.kankanlive.com"
+      - "janya-digimix.akamaized.net"
+      - "chibrics"
+      - "weathertv.cn"
+      - "101.35.240.114:88"
+    # 屏蔽的分类关键词（分类包含即跳过）
+    category-keywords:
+      - "港澳台"
+      - "Religious"
+      - "Shop"
+      - "Weather"
+      - "Legislative"
+      - "Comedy"
+      - "Classic"
+    # 精确排除的频道名（完全匹配）
+    exclude-names:
+      - "CCTV-4 Asia"
+      - "CCTV-4 Europe"
+
+  # 爬虫配置
+  crawler:
+    # 并发线程数（建议：4-8，根据网络和CPU调整）
+    concurrency: 5
+    # 最大重试次数
+    max-retries: 3
+    # 重试延迟（毫秒，指数退避）
+    retry-delay-ms: 2000
+    # 最低分辨率要求（1080p / 720p / 480p / 4k）
+    min-resolution: 1080p
+    # 无分辨率标注时的处理模式：conservative（丢弃）/ permissive（放行）
+    resolution-filter-mode: conservative
+    # 熔断器配置
+    circuit-breaker:
+      # 连续失败阈值，达到此值触发熔断
+      failure-threshold: 5
+      # 熔断后半开等待时间（毫秒）
+      half-open-timeout-ms: 300000
+
+  # 测速配置
+  speedtest:
+    # 第一轮快速检测：短超时，仅判断流是否可达
+    quick-probe-seconds: 2
+    # 第二轮详细测速：长超时，获取延迟+带宽
+    max-probe-seconds: 6
+    # 测速并发线程数（建议：2-4，ffmpeg消耗大）
+    concurrency: 5
+    # 延迟阈值（毫秒）：超过此值的频道在输出时排到末尾或过滤
+    max-latency-ms: 3000
+    # 低延迟优先：为true时输出按延迟升序排列
+    low-latency-first: true
+
+  # 指标配置
+  metrics:
+    # 指标保留时间（小时），0表示不清理
+    retention-hours: 168  # 7天
+    # 质量评分计算间隔（分钟）
+    score-calculation-interval-minutes: 1440  # 每天
+
+  # ffmpeg 配置
+  ffmpeg:
+    # ffmpeg 可执行文件路径，默认自动检测 PATH 中的 ffmpeg
+    path: ffmpeg
+
+  # 清理配置
+  cleanup:
+    # 清理 N 天未更新且不可用的频道，0 表示不清理
+    retention-days: 30
+
+# 如需切换MySQL，取消下面注释并注释上面的H2配置
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/iptv?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password: your_password
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQLDialect
+
+# Actuator 健康检查
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+
+# 日志
+logging:
+  level:
+    com.iptv: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
